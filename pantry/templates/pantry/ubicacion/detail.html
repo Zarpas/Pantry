@@ -1,0 +1,14 @@
+{% extends 'pantry/base.html' %}
+
+{% block content %}
+    <div class="block">
+        <h2><a href="{% url 'ubicacion_detail' pk=ubicacion.pk %}">{{ ubicacion.nombre }}</a></h2>
+        <p>{{ ubicacion.descripcion}}</p>
+        <p>{{ ubicacion.creado }}</p>
+        {% if ubicacion.enUso %}
+           <p>En uso.</p>
+        {% else %}
+           <p>Fuera de uso.</p>
+        {% endif %}
+    </div>
+{% endblock %}

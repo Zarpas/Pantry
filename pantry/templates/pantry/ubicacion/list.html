@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Ubicacion</title>
-</head>
-<body>
-{% for ubicacion in ubicaciones %}
-    <div>
-        <h3>{{ ubicacion.nombre }}</h3>
-        <p>{{ ubicacion.descripcion}}</p>
-        <p>{{ ubicacion.creado }}</p>
-        <p>{{ ubicacion.enUso }}</p>
-        <p></p>
-    </div>
-{% endfor %}
+{% extends 'pantry/base.html' %}
 
-</body>
-</html>
+{% block content %}
+    {% for ubicacion in ubicaciones %}
+        <div class="block">
+            <h2><a href="{% url 'ubicacion_detail' pk=ubicacion.pk %}">{{ ubicacion.nombre }}</a></h2>
+            <p>{{ ubicacion.descripcion}}</p>
+            <p>{{ ubicacion.creado }}</p>
+            <p>{{ ubicacion.enUso }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
