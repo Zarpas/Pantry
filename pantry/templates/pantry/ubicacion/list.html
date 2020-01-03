@@ -5,8 +5,15 @@
     <title>Ubicacion</title>
 </head>
 <body>
-<p>Hi There!</p>
-<p>It works!</p>
+{% for ubicacion in ubicaciones %}
+    <div>
+        <h3>{{ ubicacion.nombre }}</h3>
+        <p>{{ ubicacion.descripcion}}</p>
+        <p>{{ ubicacion.creado }}</p>
+        <p>{{ ubicacion.enUso }}</p>
+        <p></p>
+    </div>
+{% endfor %}
 
 </body>
 </html>
