@@ -1,10 +1,13 @@
 {% extends 'pantry/base.html' %}
 
 {% block content %}
+    <div>
+        <a href="{% url 'ubicacion_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    </div>
     {% for ubicacion in ubicaciones %}
         <div class="block">
             <h2><a href="{% url 'ubicacion_detail' pk=ubicacion.pk %}">{{ ubicacion.nombre }}</a></h2>
-            <p>{{ ubicacion.descripcion}}</p>
+            <p>{{ ubicacion.descripcion }}</p>
             <p>{{ ubicacion.creado }}</p>
             <p>{{ ubicacion.enUso }}</p>
         </div>

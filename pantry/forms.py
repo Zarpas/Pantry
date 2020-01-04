@@ -16,7 +16,7 @@ class EstanteForm(forms.ModelForm):
 
     class Meta:
         model = Estante
-        fields = ('refUbicacion', 'nombre', 'ubicacion', 'enUso',)
+        fields = ('refUbicacion', 'nombre', 'descripcion', 'enUso',)
 
 
 class ReferenciaForm(forms.ModelForm):

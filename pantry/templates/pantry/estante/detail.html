@@ -1,0 +1,16 @@
+{% extends 'pantry/base.html' %}
+
+{% block content %}
+    <div class="block">
+        <h2><a href="{% url 'estante_detail' pk=estante.pk %}">{{ estante.nombre }}</a></h2>
+        <a class="btn btn-default" href="{% url 'estante_edit' pk=estante.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <p>{{ estante.descripcion }}</p>
+        <p>{{ estante.refUbicacion }}</p>
+        <p>{{ estante.creado }}</p>
+        {% if estante.enUso %}
+           <p>En uso.</p>
+        {% else %}
+           <p>Fuera de uso.</p>
+        {% endif %}
+    </div>
+{% endblock %}

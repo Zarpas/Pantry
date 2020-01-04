@@ -1,0 +1,15 @@
+{% extends 'pantry/base.html' %}
+
+{% block content %}
+    <div>
+        <a href="{% url 'referencia_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    </div>
+    {% for referencia in referencias %}
+        <div class="block">
+            <h2><a href="{% url 'referencia_detail' pk=referencia.pk %}">{{ referencia.nombre }}</a></h2>
+            <p>{{ referencia.fabricante }}</p>
+            <p>{{ referencia.codigoBarras }}</p>
+            <p>{{ referencia.unidad }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
