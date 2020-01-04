@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'pantry/base.html' %}
 
-</body>
-</html>
+{% block content %}
+    <div>
+        <a href="{% url 'alimento_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    </div>
+    {% for alimento in alimentos %}
+        <div class="block">
+            <h2><a href="{% url 'alimento_detail' pk=alimento.pk %}">{{ alimento.refReferencia }}</a></h2>
+            <p>{{ alimento.refEstante }}</p>
+            <p>{{ alimento.cantidad }}</p>
+            <p>{{ alimento.caducidad }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
